@@ -5,7 +5,7 @@ const msqQuestionSchema = new Schema({
   type: { type: String, default: "msq" },
   text: { type: String, required: true },
   options: [{ type: String, required: true }],
-  correctAnswers: [{ type: String, required: true }], // multiple answers
+  correctAnswers: [{ type: Number, required: true }], // multiple answers
   explanation: { type: String },
   createdAt: { type: Date, default: Date.now },
 });

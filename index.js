@@ -4,12 +4,14 @@ import { config } from "dotenv";
 // import http from "http";
 import connect from "./database/conn.js";
 import router from "./routes/route.js";
+import cors from "cors";
 
 
 config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const port = process.env.PORT || 5642;
 
 
