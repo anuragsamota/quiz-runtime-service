@@ -16,16 +16,15 @@ const corsOptions = {
 };
 
 const app = express();
-app.use(express.json());
 app.use(cors(corsOptions));
+app.use(express.json());
 const port = process.env.PORT || 5642;
 
+app.options('*', cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json({"serviceType":"quiz_runtime","endpoint" : "/api"});
 });
-
-app.options('*', cors(corsOptions));
 
 
 // Use modular router for session APIs
