@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
   res.json({"serviceType":"quiz_runtime","endpoint" : "/api"});
 });
 
+app.options('*', cors(corsOptions));
+
 
 // Use modular router for session APIs
 app.use(router);
