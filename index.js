@@ -19,7 +19,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 const port = process.env.PORT || 5642;
 
-app.options('*', cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json({"serviceType":"quiz_runtime","endpoint" : "/api"});
