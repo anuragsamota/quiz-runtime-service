@@ -9,9 +9,13 @@ import cors from "cors";
 
 config();
 
+const corsOptions = {
+  origin: "*", 
+};
+
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 const port = process.env.PORT || 5642;
 
 
